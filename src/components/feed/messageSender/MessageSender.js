@@ -7,11 +7,15 @@ import { useState } from "react";
 
 const MessageSender = () => {
   const [text, setText] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
     if (text.length > 0) {
       alert("Yeah");
     }
+
+    setText("");
+    setImageUrl("");
   };
   return (
     <div className="messageSender">
@@ -23,7 +27,10 @@ const MessageSender = () => {
             className="messageSender__input"
             onChange={(e) => setText(e.target.value)}
           />
-          <input placeholder="Optional: enter image url" />
+          <input
+            placeholder="Optional: enter image url"
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
           <Button type="submit">Post</Button>
         </form>
       </div>
