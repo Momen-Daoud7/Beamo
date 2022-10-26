@@ -8,6 +8,12 @@
   box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
 }
 
+@media (max-width: 990px) {
+  .messageSender {
+    max-width: 440px;
+  }
+}
+
 .messageSender__top {
   border-bottom: 1px solid #eff2f5;
   padding: 15px;
@@ -57,4 +63,14 @@
 
 .messageSender__option > h3 {
   font-size: medium;
+}
+
+@media (max-width: 990px) {
+  .messageSender__option h3 {
+    font-size: 12px;
+  }
+
+  .messageSender__imgInput {
+    display: none;
+  }
 }

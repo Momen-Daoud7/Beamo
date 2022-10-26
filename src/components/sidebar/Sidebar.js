@@ -8,10 +8,11 @@ import {
   Storefront,
   VideoLibrary,
 } from "@material-ui/icons";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="sidebar">
       <SidebarRow src="n" title="Momen Dauod" />
       <SidebarRow Icon={LocalHospital} title="Covid-19 information center" />
       <SidebarRow Icon={EmojiFlags} title="Pages" />

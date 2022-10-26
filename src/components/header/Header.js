@@ -26,19 +26,19 @@ const Header = () => {
       </div>
       <div className="header__center">
         <div className="header__options active">
-          <Home fontSize="large" />
+          <Home fontSize="" />
         </div>
         <div className="header__options">
-          <Flag fontSize="large" />
+          <Flag fontSize="" />
         </div>
         <div className="header__options">
-          <SubscriptionsOutlined fontSize="large" />
+          <SubscriptionsOutlined fontSize="" />
         </div>
         <div className="header__options">
-          <StorefrontOutlined fontSize="large" />
+          <StorefrontOutlined fontSize="" />
         </div>
         <div className="header__options">
-          <SupervisedUserCircle fontSize="large" />
+          <SupervisedUserCircle fontSize="" />
         </div>
       </div>
       <div className="header__right">

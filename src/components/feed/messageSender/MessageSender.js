@@ -30,6 +30,7 @@ const MessageSender = () => {
           <input
             placeholder="Optional: enter image url"
             onChange={(e) => setImageUrl(e.target.value)}
+            className="messageSender__imgInput"
           />
           <Button type="submit">Post</Button>
         </form>

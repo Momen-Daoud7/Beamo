@@ -14,6 +14,12 @@
   justify-content: space-evenly;
 }
 
+@media (max-width: 990px) {
+  .header__left {
+    display: none;
+  }
+}
+
 .header__input {
   display: flex;
   align-items: center;
@@ -78,4 +84,10 @@
 
 .header__right {
   display: flex;
+}
+
+@media (max-width: 990px) {
+  .header__right {
+    display: none;
+  }
 }
