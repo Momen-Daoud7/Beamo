@@ -1,16 +1,13 @@
 import { Button } from "@material-ui/core";
-import { auth, provider } from "../../firebase/firebase";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/reducers/users";
 import "./Login.css";
 
 const Login = () => {
-  const signIn = () => {
+  const dispatch = useDispatch();
+  const signIn = async () => {
     // sign in
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => console.log(error));
+    await dispatch(login()).unwrap();
   };
   return (
     <div className="login">
