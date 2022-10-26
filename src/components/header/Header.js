@@ -5,6 +5,9 @@ import {
   Flag,
   Forum,
   Home,
+  Message,
+  MessageRounded,
+  MessageSharp,
   NotificationsActive,
   Search,
   StorefrontOutlined,
@@ -28,19 +31,19 @@ const Header = () => {
       </div>
       <div className="header__center">
         <div className="header__options active">
-          <Home fontSize="" />
+          <Home />
         </div>
         <div className="header__options">
-          <Flag fontSize="" />
+          <MessageSharp />
         </div>
         <div className="header__options">
-          <SubscriptionsOutlined fontSize="" />
+          <SubscriptionsOutlined />
         </div>
         <div className="header__options">
-          <StorefrontOutlined fontSize="" />
+          <StorefrontOutlined />
         </div>
         <div className="header__options">
-          <SupervisedUserCircle fontSize="" />
+          <SupervisedUserCircle />
         </div>
       </div>
       <div className="header__right">

@@ -5,6 +5,9 @@ import { Button } from "@material-ui/core";
 import "./MessageSender.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import db from "../../../firebase/firebase";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
 const MessageSender = () => {
   const [text, setText] = useState("");
@@ -13,9 +16,14 @@ const MessageSender = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (text.length > 0) {
-      alert("Yeah");
+      db.collection("posts").add({
+        message: text,
+        profilePic: user.photoURL,
+        username: user.displayName,
+        image: imageUrl,
+        timestamps: firebase.firestore.FieldValue.serverTimestamp(),
+      });
     }
-
     setText("");
     setImageUrl("");
   };
@@ -28,11 +36,13 @@ const MessageSender = () => {
             placeholder={`What's on your mind, ${user.displayName} ?`}
             className="messageSender__input"
             onChange={(e) => setText(e.target.value)}
+            value={text}
           />
           <input
             placeholder="Optional: enter image url"
             onChange={(e) => setImageUrl(e.target.value)}
             className="messageSender__imgInput"
+            value={imageUrl}
           />
           <Button type="submit">Post</Button>
         </form>

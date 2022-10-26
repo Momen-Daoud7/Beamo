@@ -10,7 +10,6 @@ import React from "react";
 import "./Post.css";
 
 const Post = ({ profilePic, image, username, timestamps, message }) => {
-  console.log(timestamps);
   return (
     <div className="post">
       <div className="post__top">
