@@ -2,8 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { auth, provider } from "../../firebase/firebase";
 
 export const login = createAsyncThunk("users/logins", async () => {
-  const results = await auth.signInWithPopup(provider);
-  return results;
+  try {
+    const results = await auth.signInWithPopup(provider);
+    return results;
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 const userSlice = createSlice({
@@ -11,7 +15,7 @@ const userSlice = createSlice({
   initialState: { user: {} },
   extraReducers: {
     [login.fulfilled]: (state, action) => {
-      state.user = action.payload;
+      state.user = action.payload.user.multiFactor.user;
     },
   },
 });

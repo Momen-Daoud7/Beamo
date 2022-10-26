@@ -10,13 +10,14 @@ import React from "react";
 import "./Post.css";
 
 const Post = ({ profilePic, image, username, timestamps, message }) => {
+  console.log(timestamps);
   return (
     <div className="post">
       <div className="post__top">
         <Avatar className="post__avatar" src={profilePic} />
         <div className="post__topInfo">
           <h4>{username}</h4>
-          <p>timestamps....</p>
+          <p>{new Date(timestamps?.toDate()).toUTCString()}</p>
         </div>
       </div>
       <div className="post__bottom">
@@ -24,7 +25,7 @@ const Post = ({ profilePic, image, username, timestamps, message }) => {
       </div>
 
       <div className="post__image">
-        <img src={image} />
+        <img src={image} alt="" />
       </div>
       <div className="post__options">
         <div className="post__option">

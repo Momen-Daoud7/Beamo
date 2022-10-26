@@ -1,13 +1,16 @@
 import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import { login } from "../../store/reducers/users";
 import "./Login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const nav = useNavigate();
   const signIn = async () => {
     // sign in
     await dispatch(login()).unwrap();
+    nav("/");
   };
   return (
     <div className="login">

@@ -12,9 +12,11 @@ import {
   SupervisedUserCircle,
 } from "@material-ui/icons";
 import React from "react";
+import { useSelector } from "react-redux";
 import "./Header.css";
 
 const Header = () => {
+  const { user } = useSelector((state) => state.users);
   return (
     <div className="header">
       <div className="header__left">
@@ -43,8 +45,8 @@ const Header = () => {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar />
-          <h4>Momen Dauod</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
         <IconButton>
           <Add />

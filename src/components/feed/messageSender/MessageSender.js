@@ -4,10 +4,12 @@ import { PhotoLibrary, Videocam, InsertEmoticon } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
 import "./MessageSender.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const MessageSender = () => {
   const [text, setText] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const { user } = useSelector((state) => state.users);
   const submitHandler = (e) => {
     e.preventDefault();
     if (text.length > 0) {
@@ -20,10 +22,10 @@ const MessageSender = () => {
   return (
     <div className="messageSender">
       <div className="messageSender__top">
-        <Avatar src="l" />
+        <Avatar src={user.photoURL} />
         <form onSubmit={submitHandler}>
           <input
-            placeholder="What's on your mind ?"
+            placeholder={`What's on your mind, ${user.displayName} ?`}
             className="messageSender__input"
             onChange={(e) => setText(e.target.value)}
           />
