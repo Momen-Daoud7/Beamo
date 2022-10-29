@@ -1,0 +1,35 @@
+.topbar {
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+}
+
+.topbar::-webkit-scrollbar {
+  display: none;
+}
+
+.topbar__option {
+  flex-basis: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.topbar__option .MuiAvatar-img {
+  border: 2px solid #2e81f4;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.topbar__optionAddRoom {
+  background-color: #2e81f4;
+  color: white;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+}

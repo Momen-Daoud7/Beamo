@@ -15,7 +15,7 @@ const MessageSender = () => {
   const { user } = useSelector((state) => state.users);
   const submitHandler = (e) => {
     e.preventDefault();
-    if (text.length > 0) {
+    if (text.trim().length > 0) {
       db.collection("posts").add({
         message: text,
         profilePic: user.photoURL,

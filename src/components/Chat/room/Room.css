@@ -1,0 +1,108 @@
+.room {
+  flex: 0.65;
+  display: flex;
+  flex-direction: column;
+}
+
+.room__header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 20px;
+}
+
+.room__info {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.room__info > h3 {
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.room__info > p {
+  color: gray;
+}
+
+.room__headerRight {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+}
+
+.room__body {
+  flex: 1;
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXwBFRcXHhoeOyEhO3xTRlN8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fP/AABEIAIIArgMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAABAAIG/8QAIBABAQEBAQEAAQUBAAAAAAAAAAERQTEhUTJxgZHBAv/EABcBAQEBAQAAAAAAAAAAAAAAAAABAwL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDmEi6ZJIyAsKIiWFAMOHFgA2FAyjYsBnA0AGAqgzVSBRq9SA4IjgEjPzWhERhAnEeAIcWHBBg60gAOIGVwgVkNAGaGgABApvy/ECI1DPgzDPAJgxoE1II0IISsUGLCkACgZ6LM8arIooNVgMLhGAzQagDW7we0wDP7a/5ZagGfnp/0T1oQwwTwxRqLxahEpEQZsRoFZFa6L9QZoIorNDVZAW/Q1WQDUZz61AMajMagGNSsxoRqHxmNAikqFJAhUAAaZqKGb6QAZa6yKmdNALrUYO6DXSPCDUOstQGjBLi0RosmKNBaBCPqQAU1m1FVZvpFFZoNADoz8EbngAy4DALTMIN8UrJgNNMzwiNKBATGYdBIKgmSAW4zSKKKOVIAyb4s/IBJCmU/QRGtLMMBqFkg0tCA6vQgK1MgdCGgqNVAKi/ukAHpVFHf4XCgRiQiPUgJ6kBUKAJIFVUgA6kC4ykCgv6kgF9VSFf/2Q==");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 80vh;
+  padding: 30px;
+  overflow: scroll;
+}
+
+.room__body::-webkit-scrollbar {
+  display: none;
+}
+
+.room__message {
+  width: fit-content;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.room__reciever {
+  margin-left: auto;
+  background-color: #2e81f4;
+  color: white;
+}
+
+.room__messageChatName {
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: x-small;
+  color: white;
+}
+
+.room__messageTimestamp {
+  margin-left: 10px;
+  font-size: xx-small;
+}
+
+.room__footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid lightgray;
+}
+
+.room__footer > form {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.room__footer > form > input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+
+.room__footer .MuiSvgIcon-root {
+  color: gray;
+  cursor: pointer;
+}

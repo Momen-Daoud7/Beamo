@@ -12,7 +12,7 @@ export const login = createAsyncThunk("users/logins", async () => {
 
 const userSlice = createSlice({
   name: "users",
-  initialState: { user: {} },
+  initialState: { user: false },
   extraReducers: {
     [login.fulfilled]: (state, action) => {
       state.user = action.payload.user.multiFactor.user;

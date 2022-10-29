@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./App.css";
-import Feed from "./components/feed/Feed";
-import Header from "./components/header/Header";
 import Login from "./components/login/Login";
-import Sidebar from "./components/sidebar/Sidebar";
+import MainPage from "./pages/MainPage";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
   const { user } = useSelector((state) => state.users);
@@ -13,20 +12,10 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
+          <Route path="/" exact element={<MainPage />} />
           <Route path="/login" exact element={<Login />} />
-          <Route
-            path="/"
-            exact
-            element={
-              <>
-                <Header />
-                <div className="app__body">
-                  <Sidebar />
-                  <Feed />
-                </div>
-              </>
-            }
-          />
+          <Route path="/chat" exact element={<ChatPage />} />
+          <Route path="/chat/rooms/:roomId" exact element={<ChatPage />} />
         </Routes>
       </BrowserRouter>
     </div>
